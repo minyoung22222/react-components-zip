@@ -1,10 +1,16 @@
-import { Global } from '@emotion/react';
+import { Global, ThemeProvider } from '@emotion/react';
 import reset from './styles/reset';
+
+import theme from './styles/theme';
+import Button from './components/Button';
 
 function App() {
   return (
     <>
-      <Global styles={reset} />
+      <ThemeProvider theme={theme}>
+        <Global styles={reset} />
+        <Button />
+      </ThemeProvider>
     </>
   );
 }
